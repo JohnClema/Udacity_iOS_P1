@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q4x-Bg-iJB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q4x-Bg-iJB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jxY-mi-gof">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="GT4-pS-HcY"/>
@@ -36,6 +37,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhO-XU-fAF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,6 +47,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfz-Dy-4yq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="stopIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -54,11 +57,13 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieH-5X-GE6">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.77818035507665861" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="mhO-XU-fAF" secondAttribute="centerX" id="8QU-D5-8rp"/>
@@ -128,6 +133,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE6-6i-Qz0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="stopIcon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -137,6 +143,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo7-iu-9IC">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -146,6 +153,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc7-gQ-WGI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="darthVader">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -155,6 +163,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEn-m0-yKy">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="fast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -164,6 +173,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ese-XF-k8k">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
                                 <state key="normal" image="chipmunk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -171,19 +181,38 @@
                                     <action selector="playChipmunkAudio:" destination="Eey-Md-Eja" eventType="touchUpInside" id="lkT-zY-n2I"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTB-kr-Dbb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="echo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="497" width="100" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playEchoAudio:" destination="Eey-Md-Eja" eventType="touchUpInside" id="cnn-EB-QBc"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.77818035510000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bc7-gQ-WGI" firstAttribute="top" secondItem="kEn-m0-yKy" secondAttribute="bottom" constant="105" id="8yK-jq-biM"/>
                             <constraint firstAttribute="centerX" secondItem="CE6-6i-Qz0" secondAttribute="centerX" id="Bst-jC-LDu"/>
+                            <constraint firstItem="OTB-kr-Dbb" firstAttribute="centerY" secondItem="45b-5C-GZe" secondAttribute="centerY" id="CaU-I5-Vh2"/>
                             <constraint firstItem="zo7-iu-9IC" firstAttribute="top" secondItem="8ux-Np-FEJ" secondAttribute="bottom" constant="44" id="DAP-G9-PZA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bc7-gQ-WGI" secondAttribute="trailing" constant="25" id="KTg-7g-rxM"/>
                             <constraint firstItem="Ese-XF-k8k" firstAttribute="leading" secondItem="45b-5C-GZe" secondAttribute="leadingMargin" constant="25" id="Neq-rl-w2P"/>
                             <constraint firstItem="kEn-m0-yKy" firstAttribute="top" secondItem="8ux-Np-FEJ" secondAttribute="bottom" constant="44" id="UGx-qy-KOz"/>
                             <constraint firstItem="pl7-S0-n0a" firstAttribute="top" secondItem="CE6-6i-Qz0" secondAttribute="bottom" constant="42" id="YI8-we-tw9"/>
+                            <constraint firstItem="OTB-kr-Dbb" firstAttribute="top" secondItem="8ux-Np-FEJ" secondAttribute="bottom" constant="433" id="ZHR-40-xtX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kEn-m0-yKy" secondAttribute="trailing" constant="25" id="egG-dt-cuD"/>
                             <constraint firstItem="zo7-iu-9IC" firstAttribute="leading" secondItem="45b-5C-GZe" secondAttribute="leadingMargin" constant="25" id="gfU-vm-Vhb"/>
+                            <constraint firstItem="OTB-kr-Dbb" firstAttribute="top" secondItem="Ese-XF-k8k" secondAttribute="bottom" constant="25" id="oOT-OJ-YBY"/>
                             <constraint firstItem="Ese-XF-k8k" firstAttribute="top" secondItem="zo7-iu-9IC" secondAttribute="bottom" constant="105" id="xdG-nU-dp5"/>
+                            <constraint firstItem="CE6-6i-Qz0" firstAttribute="top" secondItem="OTB-kr-Dbb" secondAttribute="bottom" constant="111" id="yKw-gJ-MzT"/>
+                            <constraint firstItem="OTB-kr-Dbb" firstAttribute="leading" secondItem="45b-5C-GZe" secondAttribute="leadingMargin" constant="130" id="zPA-52-hYC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -192,18 +221,24 @@
                                 <exclude reference="Bc7-gQ-WGI"/>
                                 <exclude reference="kEn-m0-yKy"/>
                                 <exclude reference="Ese-XF-k8k"/>
+                                <exclude reference="OTB-kr-Dbb"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="YI8-we-tw9"/>
-                                <exclude reference="8yK-jq-biM"/>
-                                <exclude reference="KTg-7g-rxM"/>
-                                <exclude reference="Bst-jC-LDu"/>
-                                <exclude reference="Neq-rl-w2P"/>
-                                <exclude reference="xdG-nU-dp5"/>
-                                <exclude reference="UGx-qy-KOz"/>
-                                <exclude reference="egG-dt-cuD"/>
                                 <exclude reference="DAP-G9-PZA"/>
                                 <exclude reference="gfU-vm-Vhb"/>
+                                <exclude reference="UGx-qy-KOz"/>
+                                <exclude reference="egG-dt-cuD"/>
+                                <exclude reference="Neq-rl-w2P"/>
+                                <exclude reference="xdG-nU-dp5"/>
+                                <exclude reference="8yK-jq-biM"/>
+                                <exclude reference="KTg-7g-rxM"/>
+                                <exclude reference="CaU-I5-Vh2"/>
+                                <exclude reference="ZHR-40-xtX"/>
+                                <exclude reference="oOT-OJ-YBY"/>
+                                <exclude reference="zPA-52-hYC"/>
+                                <exclude reference="Bst-jC-LDu"/>
+                                <exclude reference="yKw-gJ-MzT"/>
+                                <exclude reference="YI8-we-tw9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -215,16 +250,28 @@
                                 <include reference="Ese-XF-k8k"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="YI8-we-tw9"/>
+                                <include reference="DAP-G9-PZA"/>
+                                <include reference="gfU-vm-Vhb"/>
+                                <include reference="UGx-qy-KOz"/>
+                                <include reference="egG-dt-cuD"/>
+                                <include reference="Neq-rl-w2P"/>
+                                <include reference="xdG-nU-dp5"/>
                                 <include reference="8yK-jq-biM"/>
                                 <include reference="KTg-7g-rxM"/>
                                 <include reference="Bst-jC-LDu"/>
-                                <include reference="Neq-rl-w2P"/>
-                                <include reference="xdG-nU-dp5"/>
-                                <include reference="UGx-qy-KOz"/>
-                                <include reference="egG-dt-cuD"/>
-                                <include reference="DAP-G9-PZA"/>
-                                <include reference="gfU-vm-Vhb"/>
+                                <include reference="YI8-we-tw9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OTB-kr-Dbb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CaU-I5-Vh2"/>
+                                <exclude reference="ZHR-40-xtX"/>
+                                <exclude reference="oOT-OJ-YBY"/>
+                                <include reference="zPA-52-hYC"/>
+                                <include reference="yKw-gJ-MzT"/>
                             </mask>
                         </variation>
                     </view>
@@ -240,6 +287,7 @@
     <resources>
         <image name="chipmunk" width="100" height="100"/>
         <image name="darthVader" width="100" height="100"/>
+        <image name="echo" width="80" height="80"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
