@@ -18,6 +18,7 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
     var audio: RecordedAudio!
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordingLabel.text = "Tap to Record"
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -25,7 +26,6 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         super.viewWillAppear(true)
         microphoneButton.enabled = true
         recordingLabel.enabled = true
-        recordingLabel.text = "Tap to record"
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,7 +38,6 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
             audio = RecordedAudio(filePathURL: recorder.url, title: recorder.url.lastPathComponent!)
             microphoneButton.enabled = true
             stopButton.hidden = true
-            recordingLabel.hidden = true
 
             performSegueWithIdentifier("stopRecording", sender: audio)
         }
@@ -90,7 +89,7 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         print("in recordAudio")
     }
     @IBAction func stopRecording(sender: AnyObject) {
-        recordingLabel.text = "Tap to record"
+        recordingLabel.text = "Tap to Record"
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         do {

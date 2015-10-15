@@ -55,7 +55,7 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mQd-Rk-DgZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieH-5X-GE6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieH-5X-GE6">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
@@ -218,18 +218,18 @@
                                 <exclude reference="OTB-kr-Dbb"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DAP-G9-PZA"/>
-                                <exclude reference="gfU-vm-Vhb"/>
+                                <exclude reference="YI8-we-tw9"/>
+                                <exclude reference="8yK-jq-biM"/>
+                                <exclude reference="KTg-7g-rxM"/>
+                                <exclude reference="Bst-jC-LDu"/>
+                                <exclude reference="Neq-rl-w2P"/>
+                                <exclude reference="xdG-nU-dp5"/>
                                 <exclude reference="pvb-pb-GeD"/>
                                 <exclude reference="z2d-pq-DgH"/>
                                 <exclude reference="UGx-qy-KOz"/>
                                 <exclude reference="egG-dt-cuD"/>
-                                <exclude reference="Neq-rl-w2P"/>
-                                <exclude reference="xdG-nU-dp5"/>
-                                <exclude reference="8yK-jq-biM"/>
-                                <exclude reference="KTg-7g-rxM"/>
-                                <exclude reference="Bst-jC-LDu"/>
-                                <exclude reference="YI8-we-tw9"/>
+                                <exclude reference="DAP-G9-PZA"/>
+                                <exclude reference="gfU-vm-Vhb"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -241,16 +241,16 @@
                                 <include reference="Ese-XF-k8k"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DAP-G9-PZA"/>
-                                <include reference="gfU-vm-Vhb"/>
-                                <include reference="UGx-qy-KOz"/>
-                                <include reference="egG-dt-cuD"/>
-                                <include reference="Neq-rl-w2P"/>
-                                <include reference="xdG-nU-dp5"/>
+                                <include reference="YI8-we-tw9"/>
                                 <include reference="8yK-jq-biM"/>
                                 <include reference="KTg-7g-rxM"/>
                                 <include reference="Bst-jC-LDu"/>
-                                <include reference="YI8-we-tw9"/>
+                                <include reference="Neq-rl-w2P"/>
+                                <include reference="xdG-nU-dp5"/>
+                                <include reference="UGx-qy-KOz"/>
+                                <include reference="egG-dt-cuD"/>
+                                <include reference="DAP-G9-PZA"/>
+                                <include reference="gfU-vm-Vhb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
