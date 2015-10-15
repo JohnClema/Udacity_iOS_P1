@@ -25,20 +25,17 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         super.viewWillAppear(true)
         microphoneButton.enabled = true
         recordingLabel.enabled = true
-        
+        recordingLabel.text = "Tap to record"
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        recordingLabel.hidden = true
         stopButton.hidden = true
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag) {
-            audio = RecordedAudio(filePathURL: recorder.url)
-            audio.filePathURL = recorder.url
-            audio.title = recorder.url.lastPathComponent
+            audio = RecordedAudio(filePathURL: recorder.url, title: recorder.url.lastPathComponent!)
             microphoneButton.enabled = true
             stopButton.hidden = true
             recordingLabel.hidden = true
@@ -46,7 +43,10 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
             performSegueWithIdentifier("stopRecording", sender: audio)
         }
         else {
-            UIAlertController(title: "Error", message: "Recording was not successful", preferredStyle: .Alert)
+            let alert: UIAlertController = UIAlertController(title: "Error", message: "Recording was not successful", preferredStyle: .Alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion:nil)
             
             microphoneButton.enabled = true
             stopButton.hidden = true
@@ -67,7 +67,8 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         //TODO: Record the Users voice
         microphoneButton.enabled = false
         stopButton.hidden = false
-        recordingLabel.hidden = false
+        recordingLabel.text = "Recording"
+
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
         let recordingName = "recording.wav"
@@ -89,6 +90,7 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         print("in recordAudio")
     }
     @IBAction func stopRecording(sender: AnyObject) {
+        recordingLabel.text = "Tap to record"
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         do {
