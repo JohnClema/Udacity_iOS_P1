@@ -1,5 +1,10 @@
 # Udacity iOS Nanodegree Project 1: Pitch Perfect app
-An iOS app that lets you record audio and then add effects to it
+An iOS app that lets you record audio and press buttons to add effects including
+
+1. Slow down (Snail Button)
+2. Speed up (Rabbit Button)
+3. Increase Pitch (Chipmunk Button)
+4. Decrease Pitch (Darth Vader Button)
 
 ## How to run
 
