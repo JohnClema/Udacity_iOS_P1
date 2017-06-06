@@ -18,7 +18,7 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
     var audio: RecordedAudio!
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordingLabel.text = "Tap to Record"
+        recordingLabel.text = NSLocalizedString("Tap to Record", comment: "Label for tapping to record audio")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -42,7 +42,8 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
             performSegue(withIdentifier: "stopRecording", sender: audio)
         }
         else {
-            let alert: UIAlertController = UIAlertController(title: "Error", message: "Recording was not successful", preferredStyle: .alert)
+            let localisedUnsuccesfulMessage = NSLocalizedString("Recording was not successful", comment: "Label for tapping to record audio")
+            let alert: UIAlertController = UIAlertController(title: "Error", message: localisedUnsuccesfulMessage, preferredStyle: .alert)
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
             alert.addAction(defaultAction)
             self.present(alert, animated: true, completion:nil)
