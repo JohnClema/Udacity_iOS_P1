@@ -20,45 +20,51 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        player = try? AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
+        if let url = receivedAudio.filePathURL {
+            print(url)
+            player = try? AVAudioPlayer(contentsOf: url as URL)
+        }
         player.enableRate = true
         audioEngine = AVAudioEngine()
-        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathURL)
+        if let url = receivedAudio.filePathURL {
+            print(url)
+            audioFile = try? AVAudioFile(forReading: url as URL)
+        }
     }
 
     @IBAction func stopPlayingSounds(sender: AnyObject) {
         stopAudio()
     }
     @IBAction func playSlowSound(sender: AnyObject) {
-        playSoundWithRate(0.5)
+        playSoundWithRate(rate: 0.5)
     }
     @IBAction func playFastSound(sender: AnyObject) {
-        playSoundWithRate(2.0)
+        playSoundWithRate(rate: 2.0)
     }
     @IBAction func playChipmunkAudio(sender: AnyObject) {
-       playSoundWithVariablePitch(1000)
+        playSoundWithVariablePitch(pitch: 1000)
     }
     @IBAction func playDarthVaderAudio(sender: AnyObject) {
-        playSoundWithVariablePitch(-1000)
+        playSoundWithVariablePitch(pitch: -1000)
     }
     
     @IBAction func playEchoAudio(sender: AnyObject) {
-        playSoundWithDelay(2)
+        playSoundWithDelay(delay: 2)
     }
     
     func playSoundWithVariablePitch(pitch: Float) {
         stopAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attach(audioPlayerNode)
         
         let changePitchEffect = AVAudioUnitTimePitch()
         changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
+        audioEngine.attach(changePitchEffect)
         
         audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
         
         do {
             try audioEngine.start()
@@ -72,18 +78,18 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attach(audioPlayerNode)
         
         let echoNode = AVAudioUnitDelay()
-        echoNode.delayTime = NSTimeInterval(delay)
+        echoNode.delayTime = TimeInterval(delay)
         echoNode.feedback = 0.2
         echoNode.lowPassCutoff = 10
         echoNode.wetDryMix = 0.5
-        audioEngine.attachNode(echoNode)
+        audioEngine.attach(echoNode)
         
         audioEngine.connect(audioPlayerNode, to: echoNode, format: audioFile.processingFormat)
         audioEngine.connect(echoNode, to: audioEngine.outputNode, format: audioFile.processingFormat)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler:nil)
+        audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler:nil)
         
         do {
             try audioEngine.start()

@@ -22,68 +22,68 @@ class RecordSoundsViewController : UIViewController, AVAudioRecorderDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        microphoneButton.enabled = true
-        recordingLabel.enabled = true
+        microphoneButton.isEnabled = true
+        recordingLabel.isEnabled = true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        stopButton.hidden = true
+        stopButton.isHidden = true
     }
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag) {
-            audio = RecordedAudio(filePathURL: recorder.url, title: recorder.url.lastPathComponent!)
-            microphoneButton.enabled = true
-            stopButton.hidden = true
+            audio = RecordedAudio(filePathURL: recorder.url as NSURL, title: recorder.url.lastPathComponent)
+            microphoneButton.isEnabled = true
+            stopButton.isHidden = true
 
-            performSegueWithIdentifier("stopRecording", sender: audio)
+            performSegue(withIdentifier: "stopRecording", sender: audio)
         }
         else {
-            let alert: UIAlertController = UIAlertController(title: "Error", message: "Recording was not successful", preferredStyle: .Alert)
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alert: UIAlertController = UIAlertController(title: "Error", message: "Recording was not successful", preferredStyle: .alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
             alert.addAction(defaultAction)
-            self.presentViewController(alert, animated: true, completion:nil)
+            self.present(alert, animated: true, completion:nil)
             
-            microphoneButton.enabled = true
-            stopButton.hidden = true
+            microphoneButton.isEnabled = true
+            stopButton.isHidden = true
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "stopRecording") {
-            let playSoundsVC: PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
+            let playSoundsVC: PlaySoundsViewController = segue.destination as! PlaySoundsViewController
             let data = sender as! RecordedAudio
             playSoundsVC.receivedAudio = data
-            
         }
     }
 
     @IBAction func recordAudio(sender: AnyObject) {
         //TODO: "Show recording in process
         //TODO: Record the Users voice
-        microphoneButton.enabled = false
-        stopButton.hidden = false
+        microphoneButton.isEnabled = false
+        stopButton.isHidden = false
         recordingLabel.text = "Recording"
 
         
-        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] 
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] 
         let recordingName = "recording.wav"
         let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        print(filePath)
+        let filePath = NSURL.fileURL(withPathComponents: pathArray)
+        print(filePath!)
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         } catch _ {
         }
         
-        audioRecorder = try? AVAudioRecorder(URL: filePath!, settings: [:])
+        audioRecorder = try? AVAudioRecorder(url: filePath!, settings: [:])
         audioRecorder.delegate = self
 
-        audioRecorder.meteringEnabled = true
+        audioRecorder.isMeteringEnabled = true
         audioRecorder.record()
         
         print("in recordAudio")
